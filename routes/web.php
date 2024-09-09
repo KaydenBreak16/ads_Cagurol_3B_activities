@@ -6,11 +6,11 @@ use App\Models\Course; // Include your Course model
 
 // Route to create a new student
 Route::get('/students/create', function () {
-    $student = new Student(); // Create a new student instance
-    $student->first_name = 'John'; // Set the first name
-    $student->last_name = 'Doe'; // Set the last name
-    $student->email = 'johndoe@example.com'; // Set the email
-    $student->save(); // Save the student to the database
+    $student = new Student(); 
+    $student->first_name = 'John';
+    $student->last_name = 'Doe'; 
+    $student->email = 'johndoe@example.com'; 
+    $student->age = 22;
     return 'Student created!';
 });
 
@@ -22,10 +22,10 @@ Route::get('/students', function () {
 
 // Route to update a student
 Route::get('/students/update', function () {
-    $student = Student::where('email', 'johndoe@example.com')->first(); // Find student by email
+    $student = Student::where('email', 'johndoe@example.com')->first(); 
     if ($student) {
-        $student->first_name = 'Jane'; // Update the first name
-        $student->save(); // Save the updated student
+        $student->first_name = 'Jane'; 
+        $student->save(); // 
         return 'Student updated!';
     } else {
         return 'Student not found.';
@@ -34,9 +34,9 @@ Route::get('/students/update', function () {
 
 // Route to delete a student
 Route::get('/students/delete', function () {
-    $student = Student::where('email', 'johndoe@example.com')->first(); // Find student by email
+    $student = Student::where('email', 'johndoe@example.com')->first(); 
     if ($student) {
-        $student->delete(); // Delete the student
+        $student->delete(); 
         return 'Student deleted!';
     } else {
         return 'Student not found.';
@@ -45,9 +45,9 @@ Route::get('/students/delete', function () {
 
 // Route to create a new course
 Route::get('/courses/create', function () {
-    $course = new Course(); // Create a new course instance
-    $course->course_name = 'Introduction to Databases'; // Set the course name
-    $course->save(); // Save the course to the database
+    $course = new Course(); 
+    $course->course_name = 'Introduction to Databases'; 
+    $course->save(); 
     return 'Course created!';
 });
 
